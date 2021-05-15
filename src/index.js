@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import StoreWrapper from './StoreWrapper';
 import App from './App';
+import StoreWrapper from './StoreWrapper';
 import './index.css';
 
 
 ReactDOM.render(
-<StoreWrapper>  
+ <StoreWrapper>
 <App/>
-</StoreWrapper>  
-,document.querySelector('#root'));
+</StoreWrapper>   
+,document.getElementById('root'));

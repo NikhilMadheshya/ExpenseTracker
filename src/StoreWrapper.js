@@ -1,20 +1,23 @@
-import React, { useEffect, useReducer } from 'react'
-import {ExpenseAndIncome as reducer,calculateExpenseAndIncome} from './reducer/ExpenseAndIncome';
-import { ExpenseAndIncomeProvider } from './Context/ExpenseAndIncome';
-
+import React, { useReducer ,useEffect} from 'react';
+import {ExpenseAndIncomeReducer,calculateExpenseAndIncome} from './reducer/ExpenseAndIncome';
+import {ExpenseAndIncomeProvider} from './Context/ExpenseAndIncome';
 
 function StoreWrapper({children}) {
 
-const [account,dispatch]=useReducer(reducer,{
-    balance:1000,
-    income:0,
-    expense:0,
-    history:[] 
-}) 
+    const [account,dispatch]=useReducer(ExpenseAndIncomeReducer,{
+        current_balance:1000,
+        previous_balance:0,
+        income:0,
+        expense:0,
+        history:[
+            {money:2000,whereby:'Kishan Yojana'},
+            {money:-700,whereby:'Jeans Pant'}
+        ] 
+    })
 
-useEffect(()=>{
-calculateExpenseAndIncome(account,dispatch);
-},[account.history])
+    useEffect(() => {
+      calculateExpenseAndIncome(account,dispatch);
+    }, [])
 
     return (
        <ExpenseAndIncomeProvider value={{account,dispatch}}>

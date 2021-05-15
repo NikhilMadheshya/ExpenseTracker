@@ -1,18 +1,18 @@
-import React from 'react'
+import React from 'react';
 import styles from './App.module.css';
-import BalanceInfo from './components/balance/BalanceInfo';
-import Form from './components/form/Form';
-import History from './components/history/History';
+import BalanceInfo from './Components/balance/BalanceInfo';
+import History from './Components/history/History';
+import Form from './Components/Form/Form';
 
 function App() {
+
     return (
-        <div className={styles.container}>
-            <h1 className={styles.app_title}>EXPENSE TRACKER</h1>
-            <BalanceInfo/>
-            <History/>
-            <Form/>
-            
-        </div>
+       <div className={styles.container}>
+           <h1 className={styles.app_title}>Expense Tracker</h1>
+           <BalanceInfo/>
+           <History/>
+           <Form/>
+       </div>
     )
 }
 
